@@ -1,13 +1,11 @@
-package com.duixiang;
+package com.duixiang.day02;
 
-public class StudentDemo {
+public class StudentDemo extends Student{
     public static void main(String[] args) {
-        //1.new ç±»çš„åç§°
-      Student student1=new Student();//å­˜æ”¾ new studentï¼ˆï¼‰å †ç©ºé—´
-        System.out.println(student1);//è¾“å‡ºå¯¹è±¡çš„å†…å­˜åœ°å€
-      student1.name="ç„æœº";
-      student1.age=21;
-      System.out.println(student1.name+"--"+student1.age);
-      student1.study();
+        final int age =20;//finalĞŞÊÎ¾Ö²¿±äÁ¿
+//        age=70;
+        //Ê¹ÓÃfinalĞŞÊÎ¾Ö²¿±äÁ¿ ÊÇ»ù±¾Êı¾İÀàĞÍ ¸Ã¾Ö²¿±äÁ¿²»ÄÜ±»ĞŞ¸Ä
+      final  Student student= new Student();
+//        student.age=60;²»ÄÜ±»¸Ä
     }
 }
