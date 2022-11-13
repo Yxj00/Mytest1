@@ -1,6 +1,6 @@
 package com.duixiang.day06;
-
-public class Cat implements I{
+//先继承再接口
+public class Dog1 extends Test001 implements I,Animals{
     @Override
     public void shout() {
 
