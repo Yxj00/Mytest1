@@ -1,23 +1,14 @@
-package com.duixiang.day06;
+package com.duixiang.day08;
 
-public class Cat implements I{
-    @Override
-    public void shout() {
+public class Cat extends Animal{
+    public Cat(String name,int age){
 
+        super(name,age);
     }
-
-    @Override
-    public void run() {
-
+    public void jump(){
+        System.out.println("我是猫类 我可以跳高了！");
     }
-
-    @Override
-    public void I() {
-
-    }
-
-    @Override
-    public void Id() {
-
+    public void eat(){
+        System.out.println("我是猫类  我喜欢吃鱼 喵喵喵");
     }
 }

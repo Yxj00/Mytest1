@@ -1,44 +1,34 @@
 package com.duixiang.day08;
 
-public class Dog extends Animal {
+public abstract class Animal implements JumpInterface {
     private String name;
-    private int age;
-    public Dog(){
+    private int age ;
+    public Animal(){//定义一个无参构造方法
 
     }
+    /**
+     * 在我们Animal动物类中 已经有一个jump（）跳高抽象
+     * 定义一个抽象方法
+     */
+    public abstract void eat();
 
-    public Dog(String name, int age) {
-
+    public Animal(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    @Override
-    public void eat() {
-        System.out.println("我是狗类 我喜欢肉肉");
-    }
-
-    @Override
-    public void jump() {
-        System.out.println("我是狗类 我可以跳的很高");
-    }
-
-    @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
     public int getAge() {
         return age;
     }
 
-    @Override
     public void setAge(int age) {
         this.age = age;
     }
