@@ -1,14 +1,17 @@
-package com.duixiang.day10;
+package com.duixiang.day14;
+
+import java.util.Arrays;
 
 public class Test01 {
     public static void main(String[] args) {
-        String a="yxj";
-        String b="yxj";
-        System.out.println(a.equals(b));
-        System.out.println(a==b);
-        Student s1 = new Student("Yxj", 23);
-        Student s2 = new Student("Yxj", 23);
-        System.out.println(s1.equals(s2));//要重写object类中的equals函数
-        System.out.println(s1==s2);//地址不一样
+        String arr="97,16,36,18,50";
+        String[] str=arr.split(",");
+        int[] intA=new int[5];
+        for (int j=0;j<str.length;j++){
+            int i = Integer.parseInt(str[j]);
+            intA[j]=i;
+        }
+        Arrays.sort(intA);
+        System.out.println(Arrays.toString(intA));
     }
 }
