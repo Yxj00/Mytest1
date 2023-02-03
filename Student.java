@@ -1,35 +1,60 @@
-package com.duixiang.day18;
+package com.duixiang.day18.studentmanger;
 
 public class Student {
-    private String username;
-    private int age;
+    /**
+     *学生学号 不允许重复
+     */
+    private String stuID;
+    /*
+    学生姓名
+     */
+    private String name;
+    /**
+     * 都是使用引用类型  int 默认为0  Integer 默认值为null
+     * 学生年龄
+     */
+    private Integer age;
+    /**
+     * 学生地址
+     */
+    private String address;
 
-    public Student(String username, int age) {
-        this.username = username;
-        this.age = age;
+    public String getStuID() {
+        return stuID;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "username='" + username + '\'' +
-                ", age=" + age +
-                '}';
+    public void setStuID(String stuID) {
+        this.stuID = stuID;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Student(String stuID, String name, Integer age, String address) {
+        this.stuID = stuID;
+        this.name = name;
+        this.age = age;
+        this.address = address;
     }
 }
