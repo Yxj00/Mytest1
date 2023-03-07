@@ -1,14 +1,37 @@
-package aboutObject01.object01.marchsixth;
+package com.collectionframe.march7th;
 
-public class Student extends Person implements Study,A{
-   public String name="lili";// 不能被访问
-    @Override
-    public void study() {
-        System.out.println("我是学生");
+import java.util.Objects;
+
+public class Student {
+    private String name;// 姓名
+    private String number; // Xuehao
+
+    public Student(){
+
+    }
+    public Student(String name, String number) {
+        this.name = name;
+        this.number = number;
     }
 
     @Override
-    public void aboutA() {
-        System.out.println("我有A能力");
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(name, student.name) && Objects.equals(number, student.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, number);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", number='" + number + '\'' +
+                '}';
     }
 }
