@@ -1,40 +1,44 @@
-package com.duixiang.day08;
+package Tjise.LangQiao.march9th;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * 区域滑行问题
+ */
 public class Main {
-    public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-//        String s=scan.nextLine();
-
-//        char s1=scan.next().charAt(0);
-//        scan.close();
-//        int count=0;
-//        for (int i = 0; i < s.length(); i++) {
-//            if (s.charAt(i)==s1){
-//                count++;
-//            }
-//        }
-//        System.out.println(count);
-        int n=scan.nextInt();//表示考试人数
-        int[] a=new int[n];
-        int count1=0,count2=0;
-        for(int i=0;i<a.length;i++){
-            a[i]=scan.nextInt();
-            if(a[i]>=60){
-                count1++;
-            }
-            if(a[i]>=85){
-                count2++;
+    public static int[] getX={0,1,0,-1};
+    public static int[] getY={1,0,-1,0};
+    public static int cnt=0;
+    public static void dfs(int[][] h,int x,int y,int n,int m,int l){
+        for (int i = 0; i < 4; i++) {
+            int newx=x+getX[i];
+            int newy=y+getY[i];
+            if (newx>=0&&newx<n&&newy>=0&&newy<m&&h[newx][newy]<h[x][y]){
+                l++;
+                cnt=Math.max(cnt,l);
+                dfs(h,newx,newy,n,m,l);
+                l--;
             }
         }
-        int n1=(int)(count1*100.0/n+0.5);
-        int n2=(int)(count2*100.0/n+0.5);
-        System.out.println(n1+"%");
-        System.out.println(n2+"%");
-
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int m= sc.nextInt();
+        int[][] h = new int[n][m];// 输入几行几列
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                h[i][j]= sc.nextInt();// 输入数据
+            }
+        }
+        int res=0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cnt=0;
+                dfs(h,i,j,n,m,1);
+                res=Math.max(res,cnt);
+            }
+        }
+        System.out.println(res);
     }
 }
