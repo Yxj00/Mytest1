@@ -1,37 +1,16 @@
-package com.collectionframe.march7th;
+package aboutObject01.aboutException.march13th;
 
-import java.util.Objects;
+public class Student<T>{
+    //T 名称随意取 ，避开关键字
+    String name;
+    String id;
+    //Object age;
+    T age;
 
-public class Student {
-    private String name;// 姓名
-    private String number; // Xuehao
-
-    public Student(){
-
-    }
-    public Student(String name, String number) {
+    public Student(String name, String id, T age) {
         this.name = name;
-        this.number = number;
+        this.id = id;
+        this.age = age;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(name, student.name) && Objects.equals(number, student.number);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, number);
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", number='" + number + '\'' +
-                '}';
-    }
+    public T getAge(){return age;}
 }
